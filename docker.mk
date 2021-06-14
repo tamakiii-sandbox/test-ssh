@@ -17,11 +17,11 @@ build:
 bash:
 	docker-compose run --rm ssh $@
 
-ssh1:
-	docker-compose exec ssh ssh -p 2222 root@localhost
+ssh: ~/.ssh/id_rsa
+	docker-compose exec ssh ssh -i $| -p 2222 root@localhost
 
-ssh2:
-	ssh -i sync/root/.ssh/id_rsa -p 2222 root@localhost
+~/.ssh/id_rsa:
+	$(MAKE) -f Makefile $@
 
 inspect:
 	docker inspect $(shell docker-compose ps -q ssh)
