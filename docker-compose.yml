@@ -8,6 +8,7 @@ services:
     volumes:
       - .:/local/app
       - ./docker/ssh/etc/ssh/sshd_config:/etc/ssh/sshd_config
+      - ./sync/root/.ssh:/root/.ssh
 
 networks:
   default:
