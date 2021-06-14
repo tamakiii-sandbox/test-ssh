@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  ssh:
+    build: .
+    working_dir: /local/app
+    ports:
+      - 2222:2222
+    volumes:
+      - .:/local/app
+      - ./docker/ssh/etc/ssh/sshd_config:/etc/ssh/sshd_config
+      - ./sync/root/.ssh:/root/.ssh
+
+networks:
+  default:
+    name: test-ssh_default
