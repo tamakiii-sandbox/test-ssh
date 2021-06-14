@@ -4,7 +4,11 @@ services:
     build: .
     working_dir: /local/app
     ports:
-      - 22:22
+      - 2222:2222
     volumes:
       - .:/local/app
       - ./docker/ssh/etc/ssh/sshd_config:/etc/ssh/sshd_config
+
+networks:
+  default:
+    name: test-ssh_default

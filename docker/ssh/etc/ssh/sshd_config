@@ -10,10 +10,10 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-#Port 22
+Port 2222
 #AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
+ListenAddress 0.0.0.0
+ListenAddress ::
 
 #HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_ecdsa_key
@@ -29,6 +29,7 @@
 # Authentication:
 
 #LoginGraceTime 2m
+PermitRootLogin yes
 #PermitRootLogin prohibit-password
 #StrictModes yes
 #MaxAuthTries 6
